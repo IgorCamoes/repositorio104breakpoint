@@ -3,6 +3,7 @@ body{
     display: grid;
     grid-template-areas: 'nav nav nav nav' 'section section aside aside' 'footer footer footer footer';
     grid-template-rows: 10vh 70vh 20vh;
+    grid-template-columns: 25vw 25vw 25vw 25vw;
 }
 
 nav{
@@ -34,11 +35,46 @@ nav a{
     border-radius: 40px;
 }
 
+aside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer img{
+    width: 18px;
+}
+
+footer div:first-child{
+    display: flex;
+    justify-content: space-around;
+    height: 20px;
+    width: 150px;
+}
+
+footer div:last-child{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer div:last-child a{
+    text-decoration: none;
+}
+
 
 @media (max-width: 768px){
     body{
-        grid-template-areas: 'nav nav nav nav' 'section section section section' 'aside aside aside aside' 'footer footer footer footer';
-        grid-template-rows: 10vh 90vh 90vh 20vh;
+        grid-template-areas: 'nav nav nav aside' 'section section section aside' 'footer footer footer aside';
+        grid-template-rows: 10vh 90vh 20vh;
     }
 
     nav{
@@ -54,11 +90,27 @@ nav a{
     nav a{
         display: none;
     }
+
+
+    nav a:hover{
+        text-decoration: underline;
+        color: grey;
+    }
+
+    aside{
+        display: flex;
+        align-items: center;
+    }
+
+    aside h3{
+        text-justify: newspaper;
+    }
 }
 
 @media (max-width: 425px){
     body{
-        grid-template-rows: 15vh 85vh 80vh 20vh;
+        grid-template-areas: 'nav nav nav nav' 'section section section section' 'aside aside aside aside' 'footer footer footer footer';
+        grid-template-rows: 15vh 85vh 70vh 40vh;
     }
     
     nav{
@@ -73,11 +125,31 @@ nav a{
     nav #menuhamburguer{
         display: flex;
     }
+
+    footer{
+        grid-template-areas: 'nada nada' 'nada nada' 'link link' 'link link';
+    }
+
+    footer div:last-child a{
+        grid-area: link;
+    }
 }
 
 section{
     grid-area: section;
     background-color: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section h1{
+    font-family: 'Rock Salt', cursive;
+}
+
+section img{
+    border-radius: 100%;
 }
 
 aside{
