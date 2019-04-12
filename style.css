@@ -143,6 +143,9 @@ footer div:last-child{
 
 footer div:last-child a{
     text-decoration: none;
+    color: white;
+    font-variant-east-asian: simplified;
+
 }
 
 /* MEDIAQUERY TABLET */
@@ -224,6 +227,7 @@ footer div:last-child a{
         flex-direction: column;
         justify-content: space-between;
         text-align: center;
-        height: 45%;
+        height: 53%;
+        font-size: 14pt;
     }
 }
