@@ -18,6 +18,23 @@ nav a{
     color: white;
     text-decoration: none;
     font-variant: small-caps;
+    text-align: center;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    color: rgb(221, 221, 221);
+    font-size: 9pt;
+    text-align: start;
+}
+
+nav img{
+    width: 24px;
+    display: none;
+}
+
+nav a:hover img{
+    display: flex;
 }
 
 #menuHamburguer{
@@ -35,14 +52,72 @@ nav a{
     border-radius: 40px;
 }
 
+                                        /* SECTION */
+
+section{
+    grid-area: section;
+    background-color: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section h1{
+    font-family: 'Rock Salt', cursive;
+}
+
+section img{
+    border-radius: 100%;
+}
+
+                                        /* ASIDE */
+
 aside{
+    grid-area: aside;
+    background-color: green;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+
 }
 
+aside img{
+    width: 150px;
+    align-self: center;
+}
+
+aside div{
+    width: 100%;
+    height: 100%;
+}
+
+aside div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside div:nth-child(2){
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+aside:active div:nth-child(1){
+    display: none;
+}
+
+aside:active div:nth-child(2){
+    display: flex;
+}
+
+                                        /* FOOTER */
+
 footer{
+    grid-area: footer;
+    background-color: brown;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -70,6 +145,7 @@ footer div:last-child a{
     text-decoration: none;
 }
 
+/* MEDIAQUERY TABLET */
 
 @media (max-width: 768px){
     body{
@@ -102,10 +178,20 @@ footer div:last-child a{
         align-items: center;
     }
 
+    aside:active div:nth-child(1){
+        display: flex;
+    }
+    
+    aside:active div:nth-child(2){
+        display: none;
+    }
+
     aside h3{
         text-justify: newspaper;
     }
 }
+
+/* MEDIAQUERY MOBILE */
 
 @media (max-width: 425px){
     body{
@@ -126,40 +212,18 @@ footer div:last-child a{
         display: flex;
     }
 
-    footer{
-        grid-template-areas: 'nada nada' 'nada nada' 'link link' 'link link';
+    aside:active div:nth-child(1){
+        display: flex;
+    }
+    
+    aside:active div:nth-child(2){
+        display: none;
     }
 
-    footer div:last-child a{
-        grid-area: link;
+    footer div:nth-child(2){
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        height: 45%;
     }
 }
-
-section{
-    grid-area: section;
-    background-color: orange;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-section h1{
-    font-family: 'Rock Salt', cursive;
-}
-
-section img{
-    border-radius: 100%;
-}
-
-aside{
-    grid-area: aside;
-    background-color: green;
-}
-
-footer{
-    grid-area: footer;
-    background-color: brown;
-}
-
-/* 769 */
